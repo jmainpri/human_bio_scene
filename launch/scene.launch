@@ -1,0 +1,55 @@
+<launch>
+  <arg name="gui" default="true" />
+  <arg name="output" default="screen" />
+  <arg name="model" default="$(find human_bio_urdf)/urdf/human_bio.urdf" />
+  <arg name="table" default="$(find human_bio_scene)/config/table.urdf" />
+  <arg name="with_joint_state" default="false" />
+
+  <!-- Human 1 -->
+  <node pkg="tf" type="static_transform_publisher" name="tf_base_1" 
+        args="0 0 0 0 0 0 /world /human_1/base 10" output="$(arg output)" />
+  <group ns="human_1">
+    <param name="tf_prefix" value="/human_1"/>
+    <param name="use_gui" value="$(arg gui)"/>
+    <param name="robot_description" textfile="$(arg model)" />
+    <rosparam command="load" file="$(find human_bio_urdf)/config/default_config.yaml" />
+    <node name="robot_state_publisher" pkg="robot_state_publisher" 
+      type="robot_state_publisher" output="$(arg output)"/>
+  </group>
+
+ <!-- Human 2 -->
+ <node pkg="tf" type="static_transform_publisher" name="tf_base_2" 
+        args="0 0 0 0 0 0 /world /human_2/base 10" output="$(arg output)" />
+  <group ns="human_2">
+    <param name="tf_prefix" value="human_2"/>
+    <param name="use_gui" value="$(arg gui)"/>
+    <param name="robot_description" textfile="$(arg model)" />
+    <rosparam command="load" file="$(find human_bio_urdf)/config/default_config.yaml" />
+    <node name="robot_state_publisher" pkg="robot_state_publisher" 
+      type="robot_state_publisher" output="$(arg output)"/>
+  </group>
+
+  <!-- Table, User Experiment Pose -->
+  <!-- 1.93535459344 1.52358452444 0.731983444924 0.000000 0.000000 145.9464 -->
+  <node pkg="tf" type="static_transform_publisher" name="tf_table" 
+        args="1.93535 1.52358 0.73198 2.54818 0 0 /world /table/table_top 10" 
+        output="$(arg output)" />
+  <group ns="table">
+    <param name="tf_prefix" value="table"/>
+    <param name="use_gui" value="$(arg gui)"/>
+    <param name="robot_description" textfile="$(arg table)" />
+    <node name="joint_state_publisher" pkg="joint_state_publisher" 
+      type="joint_state_publisher" output="$(arg output)"/>
+    <node name="robot_state_publisher" pkg="robot_state_publisher" 
+      type="robot_state_publisher" output="$(arg output)"/>
+  </group>
+
+  <group if="$(arg with_joint_state)">
+    <include file="$(find human_bio_scene)/launch/joint_states.launch" />
+  </group>
+
+  <!-- RViz -->
+  <node name="rviz" pkg="rviz" type="rviz" 
+      args="-d $(find human_bio_scene)/rviz/scene.rviz" />
+
+</launch>

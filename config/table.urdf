@@ -1,0 +1,229 @@
+<?xml version="1.0"?>
+<robot name="table">
+
+    <link name="table_top">
+        <visual>
+            <origin xyz="0 0 0"/>
+            <geometry>
+                <box size="1.22 0.50 0.02" />
+            </geometry>      
+            <material name="">
+                <color rgba="0.2 0.2 0.2 1.0"/> <!-- Black -->
+            </material>
+        </visual>
+    </link>
+    <link name="central_box1">
+        <visual>
+            <geometry>
+                <box size="0.2286 0.3048 0.2210" />
+            </geometry>
+            <origin xyz="-0.1143 -0.12 0.1115"/>
+            <material name="">
+                <color rgba="0.9 0.9 0.9 1.0"/> <!-- Grey -->
+            </material>
+        </visual>
+    </link>
+    <link name="central_box2">
+        <visual>
+            <geometry>
+                <box size="0.2286 0.3048 0.2210" />
+            </geometry>
+            <origin xyz="0.1143 -0.12 0.1115"/>
+            <material name="">
+                <color rgba="0.9 0.9 0.9 1.0"/> <!-- Grey -->
+            </material>
+        </visual>
+    </link>
+     <link name="left_box">
+        <visual>
+            <geometry>
+                <box size="0.1778 0.2286 0.3304" />
+            </geometry>
+            <origin xyz="0.3175 -0.12 0.1724" />
+            <material name="">
+                <color rgba="0.2 0.9 0.5 1.0"/> <!-- Green -->
+            </material>
+        </visual>
+    </link>
+    <link name="right_box">
+        <visual>
+            <geometry>
+                <box size="0.1778 0.2286 0.3304" />
+            </geometry>
+            <origin xyz="-0.3175 -0.12 0.1724" />
+            <material name="">
+                <color rgba="0.2 0.5 0.9 1.0"/> <!-- Blue -->
+            </material>
+        </visual>
+    </link>
+    <link name="front_left">
+        <visual>
+  
+            <geometry>
+                <box size="0.2286 0.1778 0.0236" />
+            </geometry>
+            <origin xyz="0.1143 0.12 0.0108" />
+            <material name="">
+                <color rgba="0.9 0.9 0.2 1.0"/> <!-- Yellow -->
+            </material>
+        </visual>
+    </link>
+    <link name="front_right">
+        <visual>
+            <geometry>
+                <box size="0.2286 0.1778 0.0236" />
+            </geometry>
+            <origin xyz="-0.1143 0.12 0.0108" />  
+            <material name="">
+                <color rgba="0.9 0.2 0.1 0.4"/> <!-- Red -->
+            </material>
+        </visual>
+    </link>
+
+    <link name="leg1">
+        <visual>
+          <origin xyz="0.55 0.22 -0.375"  />  
+          <geometry>
+                <cylinder length="0.75" radius="0.02"/>
+          </geometry>
+           <material name="">
+                <color rgba="0. 0. 0. 1.0"/> <!-- Black -->
+            </material>
+        </visual>
+    </link>
+    <link name="leg2">
+        <visual>
+          <origin xyz="-0.55 0.22 -0.375"  />  
+          <geometry>
+                <cylinder length="0.75" radius="0.02"/>
+          </geometry>
+           <material name="">
+                <color rgba="0. 0. 0. 1.0"/> <!-- Black -->
+            </material>
+        </visual>
+    </link>
+    <link name="leg3">
+        <visual>
+          <origin xyz="0.55 -0.22 -0.375"  />  
+          <geometry>
+                <cylinder length="0.75" radius="0.02"/>
+          </geometry>
+           <material name="">
+                <color rgba="0. 0. 0. 1.0"/> <!-- Black -->
+            </material>
+        </visual>
+    </link>
+    <link name="leg4">
+        <visual>
+          <origin xyz="-0.55 -0.22 -0.375"  />  
+          <geometry>
+                <cylinder length="0.75" radius="0.02"/>
+          </geometry>
+           <material name="">
+                <color rgba="0. 0. 0. 1.0"/> <!-- Black -->
+            </material>
+        </visual>
+    </link>
+
+    <!-- ************************************************* -->
+
+    <joint name="Joint_1" type="fixed">
+        <parent link="table_top"/>
+        <child link="central_box1"/>
+    </joint>
+    <joint name="Joint_2" type="fixed">
+        <parent link="central_box1"/>
+        <child link="central_box2"/>
+    </joint>
+    <joint name="Joint_3" type="fixed">
+        <parent link="central_box2"/>
+        <child link="left_box"/>
+    </joint>
+    <joint name="Joint_4" type="fixed">
+        <parent link="left_box"/>
+        <child link="right_box"/>
+    </joint>
+    <joint name="Joint_5" type="fixed">
+        <parent link="right_box"/>
+        <child link="front_left"/>
+    </joint>
+    <joint name="Joint_6" type="fixed">
+        <parent link="front_left"/>
+        <child link="front_right"/>
+    </joint>
+
+
+
+    <joint name="Joint_7" type="fixed">
+        <parent link="table_top"/>
+        <child link="leg1"/>
+    </joint>
+    <joint name="Joint_8" type="fixed">
+        <parent link="left_box"/>
+        <child link="leg2"/>
+    </joint>
+    <joint name="Joint_9" type="fixed">
+        <parent link="right_box"/>
+        <child link="leg3"/>
+    </joint>
+    <joint name="Joint_10" type="fixed">
+        <parent link="front_left"/>
+        <child link="leg4"/>
+    </joint>
+
+</robot>
+
+
+<!-- p3d_beg_desc P3D_ROBOT
+
+p3d_beg_desc_jnt P3D_FREEFLYER  #1
+  p3d_set_prev_jnt   0
+  p3d_set_pos_xyz 0.0 0.0 0.0 0.0 0.0 0.0
+  p3d_set_dof      0 0 0  0   0   0
+  p3d_set_dof_vmin -3 -6 0 -180 -180 -180
+  p3d_set_dof_vmax 12 1 2 180 180 180
+p3d_end_desc
+
+p3d_beg_desc P3D_BODY table
+
+    # Black
+    p3d_add_desc_box table_top 1.22 0.50 0.02 P3D_GRAPHIC
+    p3d_set_prim_pos table_top 0.0 0.0 0.0 0.0 0.0 0.0
+
+    # Grey
+    p3d_add_desc_box central_box1 0.2286 0.3048 0.2210
+    p3d_set_prim_pos central_box1 -0.1143 -0.12 0.1115 0.0 0.0 0.0
+ 
+    # Grey
+    p3d_add_desc_box central_box2 0.2286 0.3048 0.2210
+    p3d_set_prim_pos central_box2 0.1143 -0.12 0.1115 0.0 0.0 0.0
+
+    # Green
+    p3d_add_desc_box left_box 0.1778 0.2286 0.3304
+    p3d_set_prim_pos left_box 0.3175 -0.12 0.1724 0.0 0.0 0.0
+
+    # Blue
+    p3d_add_desc_box right_box 0.1778 0.2286 0.3304
+    p3d_set_prim_pos right_box -0.3175 -0.12 0.1724 0.0 0.0 0.0
+
+    # Yellow
+    p3d_add_desc_box front_left 0.2286 0.1778 0.0236
+    p3d_set_prim_pos front_left 0.1143 0.12 0.0108 0.0 0.0 0.0
+
+    # Red
+    p3d_add_desc_box front_right 0.2286 0.1778 0.0236
+    p3d_set_prim_pos front_right -0.1143 0.12 0.0108 0.0 0.0 0.0
+
+p3d_end_desc
+
+p3d_end_desc
+
+p3d_set_body_poly_color table 1 Any 0.2 0.2 0.2 0.4 # Black
+p3d_set_body_poly_color table 2 Any 0.9 0.9 0.9 0.4 # Grey
+p3d_set_body_poly_color table 3 Any 0.9 0.9 0.9 0.4 # Grey
+p3d_set_body_poly_color table 4 Any 0.2 0.9 0.5 0.4 # Green
+p3d_set_body_poly_color table 5 Any 0.2 0.5 0.9 0.4 # Blue
+p3d_set_body_poly_color table 6 Any 0.9 0.9 0.2 0.4 # Yellow
+p3d_set_body_poly_color table 7 Any 0.9 0.2 0.1 0.4 # Red 
+
+-->

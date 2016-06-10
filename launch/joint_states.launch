@@ -1,0 +1,19 @@
+<launch>
+  <arg name="gui" default="true" />
+  <arg name="output" default="screen" />
+
+  <!-- Human 1 -->
+  <group ns="human_1">
+    <param name="use_gui" value="$(arg gui)"/>
+    <node name="joint_state_publisher" pkg="joint_state_publisher" 
+      type="joint_state_publisher" output="$(arg output)"/>
+  </group>
+
+ <!-- Human 2 -->
+  <group ns="human_2">
+    <param name="use_gui" value="$(arg gui)"/>
+    <node name="joint_state_publisher" pkg="joint_state_publisher" 
+      type="joint_state_publisher" output="$(arg output)"/>
+  </group>
+
+</launch>
