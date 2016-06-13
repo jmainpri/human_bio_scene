@@ -1,0 +1,7 @@
+<launch>
+	<include file="$(find human_bio_scene)/launch/scene.launch" />
+	<node pkg="human_bio_scene" 
+		type="play_library.py" 
+		name="human_bio_play_library"
+		output="screen" />
+</launch>

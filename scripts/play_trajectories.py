@@ -53,6 +53,38 @@ import xml.dom.minidom
 from sensor_msgs.msg import JointState
 from math import pi
 
+def query_yes_no(question, default="yes"):
+    """Ask a yes/no question via raw_input() and return their answer.
+
+    "question" is a string that is presented to the user.
+    "default" is the presumed answer if the user just hits <Enter>.
+        It must be "yes" (the default), "no" or None (meaning
+        an answer is required of the user).
+
+    The "answer" return value is True for "yes" or False for "no".
+    """
+    valid = {"yes": True, "y": True, "ye": True,
+             "no": False, "n": False,
+             "quit": "q", "q" : "q" }
+    if default is None:
+        prompt = " [y/n or q] "
+    elif default == "yes":
+        prompt = " [Y/n or q] "
+    elif default == "no":
+        prompt = " [y/No r q] "
+    else:
+        raise ValueError("invalid default answer: '%s'" % default)
+
+    while True:
+        sys.stdout.write(question + prompt)
+        choice = raw_input().lower()
+        if default is not None and choice == '':
+            return valid[default]
+        elif choice in valid:
+            return valid[choice]
+        else:
+            sys.stdout.write("Please respond with 'yes', 'no' or 'quit' "
+                             "(or 'y', 'n' or 'q').\n")
 
 class PlayFile:
     def __init__(self):
@@ -130,6 +162,10 @@ class PlayFile:
         # All joint properties
         self.joints = {}
 
+        # Joint state default
+        joint_state_topics = ["/human_1/joint_states", "/human_2/joint_states"]
+        self.set_publish_joint_state(joint_state_topics)
+
     def set_all_joint_names(self, description_file):
 
         robot = (
@@ -199,7 +235,7 @@ class PlayFile:
 
     def load_files(self, h1_filepath, h2_filepath):
 
-        print "Trying to open file"
+        print "Trying to open file: ", h1_filepath
 
         # Parse CSV files
         with open(h1_filepath, 'r') as h1_file:
@@ -207,6 +243,8 @@ class PlayFile:
                                 csv.reader(h1_file, delimiter=',')]
             self.traj_human1 = [map(float, row) for row in
                                 self.traj_human1]  # Convert to floats
+
+        print "Trying to open file: ", h2_filepath
 
         # Parse CSV files
         if h2_filepath is not None:
@@ -281,8 +319,16 @@ class PlayFile:
             print "%.4f percent of overshoot " % float(
                 100. * float(nb_overshoot) / float(len(self.traj_human1)))
 
-            print "press enter to play again"
-            sys.stdin.readline()
+            answer = query_yes_no("Replay ?:")
+            if answer is True:
+                continue
+            elif answer is "q":
+                print "set signal for shutdown"
+                rospy.signal_shutdown("quit by user")
+                break
+            else:
+                break
+        print "end Loop."
 
 
 if __name__ == "__main__":
@@ -327,9 +373,6 @@ if __name__ == "__main__":
         player.load_files(human1_file, human2_file)
 
         if use_ros:
-            joint_state_topics = ["/human_1/joint_states",
-                                  "/human_2/joint_states"]
-            player.set_publish_joint_state(joint_state_topics)
             xml_description = rospy.get_param("/human_1/robot_description")
             player.set_all_joint_names(xml_description)
             print "publish_joint_state : ", publish_joint_state
