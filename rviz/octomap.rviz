@@ -6,13 +6,12 @@ Panels:
       Expanded:
         - /Global Options1
         - /Status1
-        - /Grid1
-        - /Table1
         - /Table1/Links1
         - /Table1/Links1/central_box11
         - /TF1
-      Splitter Ratio: 0.450943
-    Tree Height: 768
+        - /OccupancyGrid1
+      Splitter Ratio: 0.60688
+    Tree Height: 884
   - Class: rviz/Selection
     Name: Selection
   - Class: rviz/Tool Properties
@@ -38,7 +37,7 @@ Visualization Manager:
     - Alpha: 0.5
       Cell Size: 1
       Class: rviz/Grid
-      Color: 160; 160; 164
+      Color: 249; 249; 255
       Enabled: true
       Line Style:
         Line Width: 0.03
@@ -687,392 +686,31 @@ Visualization Manager:
       Value: true
       Visual Enabled: true
     - Class: rviz/TF
-      Enabled: true
+      Enabled: false
       Frame Timeout: 15
       Frames:
         All Enabled: true
-        human_1/HeadDummyY:
-          Value: true
-        human_1/HeadDummyZ:
-          Value: true
-        human_1/PelvisBody:
-          Value: true
-        human_1/PelvisDummyRotX:
-          Value: true
-        human_1/PelvisDummyRotY:
-          Value: true
-        human_1/PelvisDummyTransX:
-          Value: true
-        human_1/PelvisDummyTransY:
-          Value: true
-        human_1/PelvisDummyTransZ:
-          Value: true
-        human_1/TorsoDummyX:
-          Value: true
-        human_1/TorsoDummyY:
-          Value: true
-        human_1/TorsoDummyZ:
-          Value: true
-        human_1/base:
-          Value: true
-        human_1/head:
-          Value: true
-        human_1/lAnkleDummyX:
-          Value: true
-        human_1/lAnkleDummyY:
-          Value: true
-        human_1/lElbowDummy:
-          Value: true
-        human_1/lFemur:
-          Value: true
-        human_1/lFoot:
-          Value: true
-        human_1/lHand:
-          Value: true
-        human_1/lHipDummyX:
-          Value: true
-        human_1/lHipDummyY:
-          Value: true
-        human_1/lHumerus:
-          Value: true
-        human_1/lRadius:
-          Value: true
-        human_1/lShoulderDummyX:
-          Value: true
-        human_1/lShoulderDummyZ:
-          Value: true
-        human_1/lTibia:
-          Value: true
-        human_1/lTorsoDummyTransX:
-          Value: true
-        human_1/lTorsoDummyTransY:
-          Value: true
-        human_1/lTorsoDummyTransZ:
-          Value: true
-        human_1/lWristDummyX:
-          Value: true
-        human_1/lWristDummyY:
-          Value: true
-        human_1/rAnkleDummyX:
-          Value: true
-        human_1/rAnkleDummyY:
-          Value: true
-        human_1/rElbowDummy1:
-          Value: true
-        human_1/rElbowDummy2:
-          Value: true
-        human_1/rElbowDummy3:
-          Value: true
-        human_1/rFemur:
-          Value: true
-        human_1/rFoot:
-          Value: true
-        human_1/rHand:
-          Value: true
-        human_1/rHipDummyX:
-          Value: true
-        human_1/rHipDummyY:
-          Value: true
-        human_1/rHumerus:
-          Value: true
-        human_1/rRadius:
-          Value: true
-        human_1/rShoulderDummyX:
-          Value: true
-        human_1/rShoulderDummyY:
-          Value: true
-        human_1/rTibia:
-          Value: true
-        human_1/rTorsoDummyTransX:
-          Value: true
-        human_1/rTorsoDummyTransY:
-          Value: true
-        human_1/rTorsoDummyTransZ:
-          Value: true
-        human_1/rWristDummy1:
-          Value: true
-        human_1/rWristDummy2:
-          Value: true
-        human_1/rWristDummy3:
-          Value: true
-        human_1/torso:
-          Value: true
-        human_2/HeadDummyY:
-          Value: true
-        human_2/HeadDummyZ:
-          Value: true
-        human_2/PelvisBody:
-          Value: true
-        human_2/PelvisDummyRotX:
-          Value: true
-        human_2/PelvisDummyRotY:
-          Value: true
-        human_2/PelvisDummyTransX:
-          Value: true
-        human_2/PelvisDummyTransY:
-          Value: true
-        human_2/PelvisDummyTransZ:
-          Value: true
-        human_2/TorsoDummyX:
-          Value: true
-        human_2/TorsoDummyY:
-          Value: true
-        human_2/TorsoDummyZ:
-          Value: true
-        human_2/base:
-          Value: true
-        human_2/head:
-          Value: true
-        human_2/lAnkleDummyX:
-          Value: true
-        human_2/lAnkleDummyY:
-          Value: true
-        human_2/lElbowDummy:
-          Value: true
-        human_2/lFemur:
-          Value: true
-        human_2/lFoot:
-          Value: true
-        human_2/lHand:
-          Value: true
-        human_2/lHipDummyX:
-          Value: true
-        human_2/lHipDummyY:
-          Value: true
-        human_2/lHumerus:
-          Value: true
-        human_2/lRadius:
-          Value: true
-        human_2/lShoulderDummyX:
-          Value: true
-        human_2/lShoulderDummyZ:
-          Value: true
-        human_2/lTibia:
-          Value: true
-        human_2/lTorsoDummyTransX:
-          Value: true
-        human_2/lTorsoDummyTransY:
-          Value: true
-        human_2/lTorsoDummyTransZ:
-          Value: true
-        human_2/lWristDummyX:
-          Value: true
-        human_2/lWristDummyY:
-          Value: true
-        human_2/rAnkleDummyX:
-          Value: true
-        human_2/rAnkleDummyY:
-          Value: true
-        human_2/rElbowDummy1:
-          Value: true
-        human_2/rElbowDummy2:
-          Value: true
-        human_2/rElbowDummy3:
-          Value: true
-        human_2/rFemur:
-          Value: true
-        human_2/rFoot:
-          Value: true
-        human_2/rHand:
-          Value: true
-        human_2/rHipDummyX:
-          Value: true
-        human_2/rHipDummyY:
-          Value: true
-        human_2/rHumerus:
-          Value: true
-        human_2/rRadius:
-          Value: true
-        human_2/rShoulderDummyX:
-          Value: true
-        human_2/rShoulderDummyY:
-          Value: true
-        human_2/rTibia:
-          Value: true
-        human_2/rTorsoDummyTransX:
-          Value: true
-        human_2/rTorsoDummyTransY:
-          Value: true
-        human_2/rTorsoDummyTransZ:
-          Value: true
-        human_2/rWristDummy1:
-          Value: true
-        human_2/rWristDummy2:
-          Value: true
-        human_2/rWristDummy3:
-          Value: true
-        human_2/torso:
-          Value: true
-        table/central_box1:
-          Value: true
-        table/central_box2:
-          Value: true
-        table/front_left:
-          Value: true
-        table/front_right:
-          Value: true
-        table/left_box:
-          Value: true
-        table/leg1:
-          Value: true
-        table/leg2:
-          Value: true
-        table/leg3:
-          Value: true
-        table/leg4:
-          Value: true
-        table/right_box:
-          Value: true
-        table/table_top:
-          Value: true
-        world:
-          Value: true
       Marker Scale: 0.25
       Name: TF
       Show Arrows: true
       Show Axes: true
       Show Names: false
       Tree:
-        world:
-          human_1/base:
-            human_1/PelvisDummyTransX:
-              human_1/PelvisDummyTransY:
-                human_1/PelvisDummyTransZ:
-                  human_1/PelvisDummyRotX:
-                    human_1/PelvisDummyRotY:
-                      human_1/PelvisBody:
-                        human_1/TorsoDummyX:
-                          human_1/TorsoDummyY:
-                            human_1/TorsoDummyZ:
-                              human_1/lTorsoDummyTransX:
-                                human_1/lTorsoDummyTransY:
-                                  human_1/lTorsoDummyTransZ:
-                                    {}
-                              human_1/rTorsoDummyTransX:
-                                human_1/rTorsoDummyTransY:
-                                  human_1/rTorsoDummyTransZ:
-                                    human_1/rShoulderDummyX:
-                                      human_1/rShoulderDummyY:
-                                        human_1/rHumerus:
-                                          human_1/rElbowDummy1:
-                                            human_1/rElbowDummy2:
-                                              human_1/rElbowDummy3:
-                                                human_1/rRadius:
-                                                  human_1/rWristDummy1:
-                                                    human_1/rWristDummy2:
-                                                      human_1/rWristDummy3:
-                                                        human_1/rHand:
-                                                          {}
-                              human_1/torso:
-                                human_1/HeadDummyZ:
-                                  human_1/HeadDummyY:
-                                    human_1/head:
-                                      {}
-                                human_1/lShoulderDummyX:
-                                  human_1/lShoulderDummyZ:
-                                    human_1/lHumerus:
-                                      human_1/lElbowDummy:
-                                        human_1/lRadius:
-                                          human_1/lWristDummyX:
-                                            human_1/lWristDummyY:
-                                              human_1/lHand:
-                                                {}
-                        human_1/lHipDummyX:
-                          human_1/lHipDummyY:
-                            human_1/lFemur:
-                              human_1/lTibia:
-                                human_1/lAnkleDummyX:
-                                  human_1/lAnkleDummyY:
-                                    human_1/lFoot:
-                                      {}
-                        human_1/rHipDummyX:
-                          human_1/rHipDummyY:
-                            human_1/rFemur:
-                              human_1/rTibia:
-                                human_1/rAnkleDummyX:
-                                  human_1/rAnkleDummyY:
-                                    human_1/rFoot:
-                                      {}
-          human_2/base:
-            human_2/PelvisDummyTransX:
-              human_2/PelvisDummyTransY:
-                human_2/PelvisDummyTransZ:
-                  human_2/PelvisDummyRotX:
-                    human_2/PelvisDummyRotY:
-                      human_2/PelvisBody:
-                        human_2/TorsoDummyX:
-                          human_2/TorsoDummyY:
-                            human_2/TorsoDummyZ:
-                              human_2/lTorsoDummyTransX:
-                                human_2/lTorsoDummyTransY:
-                                  human_2/lTorsoDummyTransZ:
-                                    {}
-                              human_2/rTorsoDummyTransX:
-                                human_2/rTorsoDummyTransY:
-                                  human_2/rTorsoDummyTransZ:
-                                    human_2/rShoulderDummyX:
-                                      human_2/rShoulderDummyY:
-                                        human_2/rHumerus:
-                                          human_2/rElbowDummy1:
-                                            human_2/rElbowDummy2:
-                                              human_2/rElbowDummy3:
-                                                human_2/rRadius:
-                                                  human_2/rWristDummy1:
-                                                    human_2/rWristDummy2:
-                                                      human_2/rWristDummy3:
-                                                        human_2/rHand:
-                                                          {}
-                              human_2/torso:
-                                human_2/HeadDummyZ:
-                                  human_2/HeadDummyY:
-                                    human_2/head:
-                                      {}
-                                human_2/lShoulderDummyX:
-                                  human_2/lShoulderDummyZ:
-                                    human_2/lHumerus:
-                                      human_2/lElbowDummy:
-                                        human_2/lRadius:
-                                          human_2/lWristDummyX:
-                                            human_2/lWristDummyY:
-                                              human_2/lHand:
-                                                {}
-                        human_2/lHipDummyX:
-                          human_2/lHipDummyY:
-                            human_2/lFemur:
-                              human_2/lTibia:
-                                human_2/lAnkleDummyX:
-                                  human_2/lAnkleDummyY:
-                                    human_2/lFoot:
-                                      {}
-                        human_2/rHipDummyX:
-                          human_2/rHipDummyY:
-                            human_2/rFemur:
-                              human_2/rTibia:
-                                human_2/rAnkleDummyX:
-                                  human_2/rAnkleDummyY:
-                                    human_2/rFoot:
-                                      {}
-          table/table_top:
-            table/central_box1:
-              table/central_box2:
-                table/left_box:
-                  table/leg2:
-                    {}
-                  table/right_box:
-                    table/front_left:
-                      table/front_right:
-                        {}
-                      table/leg4:
-                        {}
-                    table/leg3:
-                      {}
-            table/leg1:
-              {}
+        {}
       Update Interval: 0
+      Value: false
+    - Class: octomap_rviz_plugin/OccupancyGrid
+      Enabled: true
+      Max. Octree Depth: 16
+      Name: OccupancyGrid
+      Octomap Topic: /octomap_full
+      Queue Size: 10
       Value: true
+      Voxel Coloring: Z-Axis
+      Voxel Rendering: Occupied Voxels
   Enabled: true
   Global Options:
-    Background Color: 93; 93; 93
+    Background Color: 39; 39; 39
     Fixed Frame: world
     Frame Rate: 30
   Name: root
@@ -1094,30 +732,30 @@ Visualization Manager:
   Views:
     Current:
       Class: rviz/Orbit
-      Distance: 3.67747
+      Distance: 2.84446
       Enable Stereo Rendering:
         Stereo Eye Separation: 0.06
         Stereo Focal Distance: 1
         Swap Stereo Eyes: false
         Value: false
       Focal Point:
-        X: 1.51137
-        Y: 0.690345
-        Z: 0.228908
+        X: 1.67014
+        Y: 1.4703
+        Z: 0.901229
       Name: Current View
       Near Clip Distance: 0.01
-      Pitch: 0.879797
+      Pitch: 0.5798
       Target Frame: <Fixed Frame>
       Value: Orbit (rviz)
-      Yaw: 1.47589
+      Yaw: 0.709053
     Saved: ~
 Window Geometry:
   Displays:
     collapsed: false
-  Height: 1049
+  Height: 1165
   Hide Left Dock: false
   Hide Right Dock: true
-  QMainWindow State: 000000ff00000000fd0000000400000000000002240000038ffc0200000008fb0000001200530065006c0065006300740069006f006e00000001e10000009b0000006400fffffffb0000001e0054006f006f006c002000500072006f007000650072007400690065007302000001ed000001df00000185000000a3fb000000120056006900650077007300200054006f006f02000001df000002110000018500000122fb000000200054006f006f006c002000500072006f0070006500720074006900650073003203000002880000011d000002210000017afb000000100044006900730070006c00610079007301000000280000038f000000dd00fffffffb0000002000730065006c0065006300740069006f006e00200062007500660066006500720200000138000000aa0000023a00000294fb00000014005700690064006500530074006500720065006f02000000e6000000d2000003ee0000030bfb0000000c004b0069006e0065006300740200000186000001060000030c00000261000000010000010f0000040cfc0200000003fb0000001e0054006f006f006c002000500072006f00700065007200740069006500730100000041000000780000000000000000fb0000000a0056006900650077007300000000280000040c000000b000fffffffb0000001200530065006c0065006300740069006f006e010000025a000000b200000000000000000000000200000490000000a9fc0100000001fb0000000a00560069006500770073030000004e00000080000002e10000019700000003000006240000003efc0100000002fb0000000800540069006d0065010000000000000624000002f600fffffffb0000000800540069006d00650100000000000004500000000000000000000003fa0000038f00000004000000040000000800000008fc0000000100000002000000010000000a0054006f006f006c00730100000000ffffffff0000000000000000
+  QMainWindow State: 000000ff00000000fd00000004000000000000019900000403fc0200000008fb0000001200530065006c0065006300740069006f006e00000001e10000009b0000006400fffffffb0000001e0054006f006f006c002000500072006f007000650072007400690065007302000001ed000001df00000185000000a3fb000000120056006900650077007300200054006f006f02000001df000002110000018500000122fb000000200054006f006f006c002000500072006f0070006500720074006900650073003203000002880000011d000002210000017afb000000100044006900730070006c006100790073010000002800000403000000dd00fffffffb0000002000730065006c0065006300740069006f006e00200062007500660066006500720200000138000000aa0000023a00000294fb00000014005700690064006500530074006500720065006f02000000e6000000d2000003ee0000030bfb0000000c004b0069006e0065006300740200000186000001060000030c00000261000000010000010f0000040cfc0200000003fb0000001e0054006f006f006c002000500072006f00700065007200740069006500730100000041000000780000000000000000fb0000000a0056006900650077007300000000280000040c000000b000fffffffb0000001200530065006c0065006300740069006f006e010000025a000000b200000000000000000000000200000490000000a9fc0100000001fb0000000a00560069006500770073030000004e00000080000002e10000019700000003000006800000003efc0100000002fb0000000800540069006d0065010000000000000680000002f600fffffffb0000000800540069006d00650100000000000004500000000000000000000004e10000040300000004000000040000000800000008fc0000000100000002000000010000000a0054006f006f006c00730100000000ffffffff0000000000000000
   Selection:
     collapsed: false
   Time:
@@ -1126,6 +764,6 @@ Window Geometry:
     collapsed: false
   Views:
     collapsed: true
-  Width: 1572
-  X: 3372
-  Y: 103
+  Width: 1664
+  X: 821
+  Y: 139
