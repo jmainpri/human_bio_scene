@@ -21,7 +21,8 @@ import numpy as np
 import rospy
 import os
 import rospkg
-from PlayTrajectories import *
+import threading
+from PlayFile import *
 
 
 class PlayLibrary:

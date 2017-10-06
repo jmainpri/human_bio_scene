@@ -225,8 +225,8 @@ class PlayFile:
                 # TODO REMOVE THAT SHOULDER HACK
                 # Should work on left arm model to avoid setting
                 # the shoulder in the parser
-                if joint == "lShoulderX":
-                    joint_state.position[id_dof] = -pi / 2.
+                # if joint == "lShoulderX":
+                #     joint_state.position[id_dof] = -pi / 2.
 
                 if joint in self.active_dofs:
                     i = self.active_dofs.index(joint)
