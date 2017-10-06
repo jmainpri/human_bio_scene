@@ -1,11 +1,12 @@
 #!/usr/bin/env python
+# ! DO NOT MANUALLY INVOKE THIS setup.py, USE CATKIN INSTEAD
 
 from distutils.core import setup
-from catkin_pkg.python_setup import generate_distutils_setup
+from catkin_pkg import python_setup
 
-d = generate_distutils_setup( 
-    packages=['human_bio_scene'],
-    package_dir={'': 'src'}
-)
+# fetch values from package.xml
+setup_args = python_setup.generate_distutils_setup(
+    packages=['.'],
+    package_dir={'': 'src'})
 
-setup(**d)
+setup(**setup_args)
